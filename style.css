@@ -1,0 +1,556 @@
+/* Shared colors and sizing. These variables keep the original palette together. */
+:root {
+    --background: #e8e3d8;
+    --text: #252523;
+    --accent: #b94f32;
+    --border: #8a887f;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: var(--background);
+    color: var(--text);
+    font-family: Arial, sans-serif;
+}
+
+/* Header and navigation */
+header {
+    min-height: 72px;
+    padding: 0 5%;
+    border-bottom: 1px solid var(--border);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    color: var(--text);
+    font-size: 1.4rem;
+    font-weight: 800;
+    text-decoration: none;
+    letter-spacing: -1px;
+}
+
+nav {
+    display: flex;
+    gap: 2rem;
+}
+
+nav a {
+    color: var(--text);
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+nav a:hover {
+    color: var(--accent);
+}
+
+/* Hero: the desktop photo is positioned relative to this section. */
+.hero {
+    position: relative;
+    overflow: hidden;
+    min-height: calc(100vh - 72px);
+    padding: 7rem 5% 4rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.hero-label {
+    margin: 0 0 1.5rem;
+    color: var(--accent);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.hero h1 {
+    position: relative;
+    z-index: 1;
+
+    width: 70%;
+    max-width: 950px;
+    margin: 0;
+
+    font-size: clamp(3.5rem, 8vw, 7.5rem);
+    line-height: 0.95;
+    letter-spacing: -5px;
+    text-transform: uppercase;
+}
+
+.hero h1 span {
+    color: transparent;
+    -webkit-text-stroke: 2px var(--text);
+}
+
+.hero-description {
+    max-width: 650px;
+    margin: 2.5rem 0;
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
+.hero-button {
+    padding: 0.9rem 1.2rem;
+    border: 1px solid var(--text);
+
+    color: var(--text);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.hero-button:hover {
+    background-color: var(--accent);
+    color: white;
+    border-color: var(--accent);
+}
+
+/* Polaroid frame, photo crop, and handwritten caption */
+.hero-polaroid {
+    position: absolute;
+    top: 5rem;
+    right: 5%;
+
+    width: 23%;
+    margin: 0;
+    padding: 0.6rem 0.6rem 1rem;
+
+    background-color: #f5f2e9;
+    border: 1px solid var(--border);
+    box-shadow: 8px 10px 0 rgba(37, 37, 35, 0.15);
+
+    transform: rotate(2deg);
+}
+
+.hero-polaroid img {
+    display: block;
+    width: 100%;
+    height: 330px;
+
+    object-fit: cover;
+    object-position: 50% 74%;
+    filter: grayscale(100%);
+}
+.hero-polaroid figcaption {
+    padding: 0.8rem 0.2rem 0.1rem;
+
+    font-family: "Permanent Marker", cursive;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    text-align: center;
+
+    transform: rotate(-1deg);
+}
+/* Selected work */
+.projects {
+    padding: 7rem 5%;
+    border-top: 1px solid var(--border);
+    background-color: #f3efe6;
+}
+
+.section-label {
+    margin-bottom: 1.5rem;
+
+    color: var(--accent);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.projects h2 {
+    margin: 0;
+
+    font-size: clamp(3rem, 7vw, 6rem);
+    line-height: 1;
+    letter-spacing: -4px;
+    text-transform: uppercase;
+}
+
+.section-intro {
+    max-width: 600px;
+    margin-top: 1.5rem;
+
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+/* Desktop columns: project number, description, and logo. */
+.project-card {
+    margin-top: 4rem;
+    padding: 2rem 0;
+
+    display: grid;
+    grid-template-columns: 80px 1fr 280px;
+    gap: 2rem;
+
+    border-top: 2px solid var(--text);
+    border-bottom: 1px solid var(--border);
+}
+
+.project-number {
+    font-family: monospace;
+    font-size: 0.8rem;
+}
+
+.project-content {
+    max-width: 750px;
+}
+
+.project-type {
+    margin: 0 0 1rem;
+
+    color: var(--accent);
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+.project-content h3 {
+    margin: 0 0 1.5rem;
+
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    line-height: 1;
+    letter-spacing: -3px;
+    text-transform: uppercase;
+}
+
+.project-content > p:not(.project-type, .project-role) {
+    max-width: 650px;
+    line-height: 1.7;
+}
+
+.project-role {
+    margin-top: 2rem;
+    padding-top: 1rem;
+
+    border-top: 1px solid var(--border);
+    font-family: monospace;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+}
+
+.project-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 2rem;
+    border-left: 1px solid var(--border);
+}
+
+.project-logo img {
+    display: block;
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+}
+
+/* Tablet: preserve the existing hero sizing; give project text more room. */
+@media (max-width: 1000px) {
+    .hero-polaroid {
+        position: absolute;
+        top: 4rem;
+        right: 3%;
+
+        width: 190px;
+    }
+
+    .hero-polaroid img {
+        height: 270px;
+    }
+
+    .hero h1 {
+        width: calc(100% - 240px);
+        font-size: clamp(2.8rem, 7vw, 5rem);
+        letter-spacing: -3px;
+    }
+
+    .hero-description {
+        max-width: calc(100% - 240px);
+    }
+}
+
+@media (max-width: 1000px) {
+    .project-card {
+        grid-template-columns: 80px minmax(0, 1fr);
+    }
+
+    .project-content {
+        min-width: 0;
+    }
+
+    /* The logo moves under the description, aligned with its column. */
+    .project-logo {
+        grid-column: 2;
+        border-left: 0;
+        border-top: 1px solid var(--border);
+    }
+}
+
+/* Phones: normal document flow keeps the photo from overlapping the copy. */
+@media (max-width: 700px) {
+    header {
+        flex-wrap: wrap;
+        gap: 1rem;
+        padding: 1rem 5%;
+    }
+
+    nav {
+        flex-wrap: wrap;
+        gap: 0.75rem 1rem;
+    }
+
+    .hero {
+        min-height: auto;
+        padding-top: 3rem;
+    }
+
+    .hero-polaroid {
+        position: static;
+        width: 190px;
+        max-width: 90%;
+        align-self: center;
+        margin-bottom: 3rem;
+    }
+
+    .hero h1 {
+        width: 100%;
+        font-size: clamp(2rem, 8vw, 3.5rem);
+        letter-spacing: -2px;
+    }
+
+    .hero-description {
+        max-width: 100%;
+    }
+
+    .projects {
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+    }
+
+    /* A single column preserves the HTML reading order on small screens. */
+    .project-card {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 1.5rem;
+        margin-top: 2.5rem;
+    }
+
+    .project-content h3 {
+        font-size: clamp(2rem, 7vw, 3rem);
+        letter-spacing: -2px;
+    }
+
+    .project-logo {
+        grid-column: auto;
+    }
+
+    /* Break unusually long text only when it would otherwise overflow. */
+    .hero,
+    .project-content {
+        overflow-wrap: anywhere;
+    }
+}
+/* Responder Athlete case-study page */
+
+.case-hero {
+    min-height: calc(100vh - 72px);
+    padding: 4rem 5%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    border-bottom: 1px solid var(--border);
+}
+
+.back-link {
+    width: fit-content;
+    margin-bottom: auto;
+
+    color: var(--text);
+    font-family: monospace;
+    font-size: 0.75rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.back-link:hover {
+    color: var(--accent);
+}
+
+.case-number {
+    margin-bottom: 1.5rem;
+
+    color: var(--accent);
+    font-family: monospace;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.case-hero h1 {
+    max-width: 1100px;
+    margin: 0;
+
+    font-size: clamp(4rem, 10vw, 9rem);
+    line-height: 0.9;
+    letter-spacing: -6px;
+    text-transform: uppercase;
+}
+
+.case-summary {
+    max-width: 650px;
+    margin: 2rem 0 3rem;
+
+    font-size: 1.2rem;
+    line-height: 1.7;
+}
+
+.case-details {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    border-top: 1px solid var(--text);
+    border-bottom: 1px solid var(--text);
+}
+
+.case-details div {
+    padding: 1.25rem 1rem;
+    border-right: 1px solid var(--border);
+}
+
+.case-details div:last-child {
+    border-right: none;
+}
+
+.case-details span,
+.case-details strong {
+    display: block;
+}
+
+.case-details span {
+    margin-bottom: 0.5rem;
+
+    color: var(--accent);
+    font-family: monospace;
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.case-details strong {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+}
+.project-link {
+    display: inline-block;
+    width: fit-content;
+    margin-top: 2rem;
+    padding-bottom: 0.3rem;
+
+    border-bottom: 1px solid var(--text);
+    color: var(--text);
+
+    font-family: monospace;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.project-link:hover {
+    color: var(--accent);
+    border-color: var(--accent);
+}.case-visual {
+    min-height: 500px;
+    padding: 3rem 5%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    background-color: var(--text);
+    color: var(--background);
+}
+
+.visual-label {
+    align-self: flex-start;
+    margin-bottom: auto;
+
+    font-family: monospace;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.case-visual img {
+    width: min(700px, 85%);
+    height: auto;
+    margin: auto;
+}.case-overview {
+    padding: 8rem 5%;
+
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 8%;
+}
+
+.overview-heading h2 {
+    max-width: 600px;
+    margin: 0;
+
+    font-size: clamp(3rem, 6vw, 6rem);
+    line-height: 0.95;
+    letter-spacing: -4px;
+    text-transform: uppercase;
+}
+
+.overview-content {
+    border-top: 2px solid var(--text);
+}
+
+.overview-block {
+    padding: 2rem 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.overview-block span {
+    display: block;
+    margin-bottom: 1rem;
+
+    color: var(--accent);
+    font-family: monospace;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.overview-block p {
+    max-width: 650px;
+    margin: 0;
+
+    font-size: 1.05rem;
+    line-height: 1.8;
+}
