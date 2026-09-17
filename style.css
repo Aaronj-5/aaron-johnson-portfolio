@@ -1438,4 +1438,25 @@ nav a:hover {
         justify-self: start;
         margin: 0 0 2rem;
     }
+}.availability {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+
+    margin: -1rem 0 2rem;
+
+    font-family: monospace;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.availability span {
+    width: 9px;
+    height: 9px;
+    flex-shrink: 0;
+
+    background-color: var(--accent);
+    transform: rotate(45deg);
 }
