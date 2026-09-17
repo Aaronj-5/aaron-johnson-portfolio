@@ -1459,4 +1459,25 @@ nav a:hover {
 
     background-color: var(--accent);
     transform: rotate(45deg);
+}.progress-project + .progress-project {
+    margin-top: 3rem;
+}.project-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.project-actions .project-link {
+    margin-top: 2rem;
+}
+
+.project-link-secondary {
+    background-color: transparent;
+    color: var(--text);
+}
+
+.project-link-secondary:hover {
+    background-color: var(--accent);
+    color: #ffffff;
+    border-color: var(--accent);
 }
