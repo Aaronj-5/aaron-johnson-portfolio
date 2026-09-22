@@ -1807,3 +1807,61 @@ nav a:hover {
         margin-top: 2rem;
     }
 }
+
+/* Endorsement letter treatment — scoped so existing image styles remain unchanged. */
+.endorsement {
+    background-color: #d9d1c1;
+}
+
+.endorsement-letter {
+    padding: clamp(2rem, 4.5vw, 4.25rem);
+    border: 1px solid #a69d8e;
+    border-top: 4px solid var(--text);
+    background-color: #f7f0df;
+    box-shadow: 12px 13px 0 rgba(37, 37, 35, 0.18);
+    transform: rotate(-0.3deg);
+}
+
+.endorsement-mark {
+    color: var(--accent);
+    font-family: "Special Elite", "Courier New", monospace;
+}
+
+.endorsement-copy p {
+    font-family: "Special Elite", "Courier New", monospace;
+    font-size: clamp(1rem, 1.3vw, 1.15rem);
+    line-height: 1.82;
+}
+
+.endorsement-attribution {
+    margin-top: 3.25rem;
+    padding-top: 1.25rem;
+    border-top-color: #a69d8e;
+    font-family: "Special Elite", "Courier New", monospace;
+}
+
+.endorsement-contact {
+    width: fit-content;
+    margin-top: 0.45rem;
+    color: var(--text);
+    font-size: 0.72rem;
+    text-decoration-color: var(--accent);
+    text-underline-offset: 0.22rem;
+}
+
+.endorsement-contact:hover {
+    color: var(--accent);
+}
+
+@media (max-width: 700px) {
+    .endorsement-letter {
+        padding: 1.5rem;
+        box-shadow: 7px 8px 0 rgba(37, 37, 35, 0.18);
+        transform: none;
+    }
+
+    .endorsement-copy p {
+        font-size: 0.95rem;
+        line-height: 1.75;
+    }
+}
