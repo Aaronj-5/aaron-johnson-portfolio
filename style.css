@@ -1934,3 +1934,53 @@ nav a:hover {
         overflow-wrap: anywhere;
     }
 }
+
+/* Case-study phone layout. Keep after the desktop contribution styles so the
+   single-column layout wins in the cascade on narrow screens. */
+@media (max-width: 700px) {
+    .case-study-page .contributions {
+        padding: 4rem 1.25rem;
+    }
+
+    .case-study-page .contributions-heading {
+        display: block;
+        margin-bottom: 2.5rem;
+    }
+
+    .case-study-page .contributions-heading h2 {
+        max-width: 100%;
+        margin-top: 1rem;
+        font-size: clamp(2.5rem, 13vw, 4rem);
+        letter-spacing: -3px;
+        overflow-wrap: anywhere;
+    }
+
+    .case-study-page .contribution-list {
+        grid-template-columns: minmax(0, 1fr);
+        border-left: none;
+    }
+
+    .case-study-page .contribution-list article {
+        min-width: 0;
+        min-height: 0;
+        padding: 2rem 0;
+        border-right: none;
+    }
+
+    .case-study-page .contribution-list h3 {
+        margin-top: 1.5rem;
+        overflow-wrap: anywhere;
+    }
+
+    .case-study-page .contribution-list p {
+        max-width: 100%;
+        overflow-wrap: anywhere;
+    }
+}
+
+@media (max-width: 480px) {
+    .case-study-page .contributions {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}
