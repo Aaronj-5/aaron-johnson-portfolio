@@ -1984,3 +1984,22 @@ nav a:hover {
         padding-right: 1rem;
     }
 }
+@media (max-width: 700px) {
+  .contribution-grid {
+    grid-template-columns: 1fr !important;
+    width: 100%;
+  }
+
+  .contribution-card {
+    min-width: 0;
+    padding: 2rem 1.5rem;
+  }
+
+  .contribution-card h3 {
+    font-size: clamp(2rem, 10vw, 2.8rem);
+  }
+
+  body {
+    overflow-x: hidden;
+  }
+}
