@@ -1824,11 +1824,11 @@ nav a:hover {
 
 .endorsement-mark {
     color: var(--accent);
-    font-family: "Special Elite", "Courier New", monospace;
+    font-family: Arial, sans-serif;
 }
 
 .endorsement-copy p {
-    font-family: "Special Elite", "Courier New", monospace;
+    font-family: Arial, sans-serif;
     font-size: clamp(1rem, 1.3vw, 1.15rem);
     line-height: 1.82;
 }
@@ -1837,7 +1837,7 @@ nav a:hover {
     margin-top: 3.25rem;
     padding-top: 1.25rem;
     border-top-color: #a69d8e;
-    font-family: "Special Elite", "Courier New", monospace;
+    font-family: Arial, sans-serif;
 }
 
 .endorsement-contact {
@@ -1861,7 +1861,76 @@ nav a:hover {
     }
 
     .endorsement-copy p {
-        font-size: 0.95rem;
-        line-height: 1.75;
+        font-size: 1rem;
+        line-height: 1.7;
+    }
+}
+
+/* Stack the endorsement before its columns become cramped on small tablets. */
+@media (max-width: 900px) {
+    .endorsement {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 2.5rem;
+    }
+
+    .endorsement-copy,
+    .endorsement-letter {
+        min-width: 0;
+        max-width: 100%;
+    }
+}
+
+/* Narrow-phone safeguards shared by every home-page section. */
+@media (max-width: 480px) {
+    header,
+    .hero,
+    .endorsement,
+    .projects,
+    .in-progress,
+    .certifications,
+    .about,
+    .site-footer {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    nav {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .hero h1,
+    .endorsement-heading h2,
+    .projects h2,
+    .section-heading-row h2,
+    .about-heading h2 {
+        overflow-wrap: anywhere;
+    }
+
+    .endorsement-letter {
+        padding: 1.25rem;
+    }
+
+    .endorsement-mark {
+        font-size: 5.5rem;
+    }
+
+    .project-link,
+    .contact-links a {
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .contact-links {
+        flex-direction: column;
+    }
+
+    .project-content,
+    .progress-content,
+    .certification-card,
+    .about-content,
+    .site-footer > * {
+        min-width: 0;
+        overflow-wrap: anywhere;
     }
 }
