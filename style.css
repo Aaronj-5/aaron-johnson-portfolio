@@ -282,6 +282,87 @@ nav a:hover {
     height: auto;
 }
 
+/* Featured professional endorsement, placed between the hero and selected work. */
+.endorsement {
+    padding: 7rem 5%;
+    display: grid;
+    grid-template-columns: minmax(240px, 0.7fr) minmax(0, 1.5fr);
+    gap: clamp(3rem, 9vw, 10rem);
+    border-top: 1px solid var(--border);
+    background-color: #f5f2e9;
+}
+
+.endorsement-heading h2 {
+    margin: 0;
+    font-size: clamp(2.8rem, 5.5vw, 5.5rem);
+    line-height: 0.94;
+    letter-spacing: -4px;
+    text-transform: uppercase;
+}
+
+.endorsement-letter {
+    position: relative;
+    margin: 0;
+    padding: clamp(2rem, 4vw, 4rem);
+    border: 1px solid var(--border);
+    border-top: 3px solid var(--text);
+    background-color: var(--background);
+}
+
+.endorsement-mark {
+    position: absolute;
+    top: -0.2em;
+    right: 0.04em;
+    color: var(--accent);
+    font-family: Georgia, serif;
+    font-size: clamp(7rem, 14vw, 12rem);
+    line-height: 1;
+    pointer-events: none;
+}
+
+.endorsement-copy {
+    position: relative;
+    z-index: 1;
+    max-width: 780px;
+}
+
+.endorsement-copy p {
+    margin: 0;
+    font-family: Georgia, serif;
+    font-size: clamp(1.1rem, 1.65vw, 1.4rem);
+    line-height: 1.7;
+}
+
+.endorsement-copy p + p {
+    margin-top: 1.75rem;
+}
+
+.endorsement-attribution {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    margin-top: 3rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--border);
+    font-family: monospace;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+}
+
+.endorsement-attribution strong {
+    font-size: 0.8rem;
+}
+
+.endorsement-attribution span,
+.endorsement-attribution small {
+    font-size: 0.7rem;
+}
+
+.endorsement-attribution small {
+    margin-top: 0.55rem;
+    color: var(--accent);
+}
+
 
 /* Tablet: preserve the existing hero sizing; give project text more room. */
 @media (max-width: 1000px) {
@@ -1676,5 +1757,53 @@ nav a:hover {
     .footer-links {
         flex-wrap: wrap;
         gap: 1rem 1.5rem;
+    }
+
+    /* Keep all six navigation links inside narrow phone screens. */
+    nav {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 0.75rem 0.5rem;
+    }
+
+    nav a {
+        min-width: 0;
+        text-align: center;
+        overflow-wrap: anywhere;
+    }
+
+    /* Featured endorsement */
+    .endorsement {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 2.5rem;
+        padding: 4rem 1.25rem;
+    }
+
+    .endorsement-heading h2 {
+        font-size: clamp(2.5rem, 12vw, 3.8rem);
+        letter-spacing: -3px;
+    }
+
+    .endorsement-letter {
+        padding: 1.5rem;
+    }
+
+    .endorsement-mark {
+        top: -0.05em;
+        right: 0.02em;
+        font-size: 7rem;
+    }
+
+    .endorsement-copy {
+        overflow-wrap: anywhere;
+    }
+
+    .endorsement-copy p {
+        font-size: 1.05rem;
+        line-height: 1.65;
+    }
+
+    .endorsement-attribution {
+        margin-top: 2rem;
     }
 }
